@@ -17,5 +17,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'indent': ['error', 4], // Set indentation to 4 spaces
+    'semi': ['error', 'always'], // enforce semicolons at the end of each line
+    "quotes": ["error", "single"], // enforce single quotes for string literals
   },
 }

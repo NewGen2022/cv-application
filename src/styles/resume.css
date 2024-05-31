@@ -1,0 +1,16 @@
+#resume {
+    background-color: white;
+    box-shadow: 0 0 20px rgb(87, 87, 87);
+    margin: 40px;
+    width: 100%;
+    max-width: 400mm;
+    min-width: 440px;
+    height: 297mm;
+}
+
+@media screen and (max-width: 900px) {
+    #resume {
+        width: 90%;
+        min-width: 340px;
+    }
+}

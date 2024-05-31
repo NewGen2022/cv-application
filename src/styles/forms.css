@@ -13,13 +13,36 @@ form {
     padding: 30px 60px;
     border-radius: 10px;
     box-shadow: 0 7px 10px rgb(130, 130, 130);
-    width: 27%;
+    width: 21%;
     min-width: 250px;
     margin-top: 10px;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.header:last-child {
+    justify-content: end;
+}
+
+.icon {
+    height: 20px;
+}
+.chevron-btn {
+    margin-left: auto;
+}
+
 form h2 {
-    margin-bottom: 20px;
+    display: inline;
+    margin-left: 12px;
+}
+
+.chevron-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .form-input {
@@ -80,6 +103,10 @@ form h2 {
 
 .cancel:active, .save:active {
     transform: scale(0.95);
+}
+
+#experience {
+    margin-bottom: 40px;
 }
 
 @media screen and (max-width: 768px) {

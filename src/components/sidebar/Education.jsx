@@ -15,9 +15,11 @@ const Education = () => {
             <FormInput id='degree' labelText='Degree' placeholder='Enter degree / field of study' required />
             <FormInput id='start-date' labelText='Start Degree Date' placeholder='Enter in format month/year' required />
             <FormInput id='end-date' labelText='End Degree Date' placeholder='Enter in format month/year' required />
-            <FormInput id='location' labelText='Location' placeholder='Enter Location where studied'/>
-            <AddBtn btnValue='Cancel' handleClick={showEducationForm}/>
-            <AddBtn btnValue='Save' handleClick={showEducationForm}/>
+            <FormInput id='location' labelText='Location' placeholder='Enter Location'/>
+            <div className='buttons'>
+                <AddBtn btnValue='Cancel' className='cancel' handleClick={showEducationForm}/>
+                <AddBtn btnValue='Save' className='save' handleClick={showEducationForm}/>
+            </div>
         </form>
     );
 };

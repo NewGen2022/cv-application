@@ -1,9 +1,11 @@
-const Resume = () => {
-  return (
-    <div>
-      <p>Resume</p>
-    </div>
-  )
-}
+import ResumeHeader from './ResumeHeader';
 
-export default Resume
+const Resume = () => {
+    return (
+        <div id='resume'>
+            <ResumeHeader />
+        </div>
+    );
+};
+
+export default Resume;

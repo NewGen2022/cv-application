@@ -1,0 +1,89 @@
+#forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+form {
+    background-color: rgb(255, 255, 255);
+    padding: 30px 60px;
+    border-radius: 10px;
+    box-shadow: 0 7px 10px rgb(130, 130, 130);
+    width: 27%;
+    min-width: 250px;
+    margin-top: 10px;
+}
+
+form h2 {
+    margin-bottom: 20px;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.form-input label {
+    font-weight: 500;
+    font-size: 18px;
+    margin: 10px 0 5px 0;
+}
+
+.form-input input {
+    border-radius: 5px;
+    border: 1px solid rgb(136, 136, 136);
+    padding: 8px 10px;
+    font-size: 16px;
+    background-color: rgb(249, 249, 249);
+    color: black;
+}
+
+.form-input input:focus {
+    outline-color: rgb(0, 136, 255);
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    margin-top: 20px;
+}
+
+.cancel, .save {
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    background: none;
+}
+
+.cancel {
+    border: 2px solid rgb(255, 0, 0);
+}
+.cancel:hover {
+    color: white;
+    background-color: red;
+}
+
+.save {
+    border: 2px solid rgb(0, 255, 8);
+}
+.save:hover {
+    color: white;
+    background-color: rgb(0, 255, 68);
+}
+
+.cancel:active, .save:active {
+    transform: scale(0.95);
+}
+
+@media screen and (max-width: 768px) {
+    form {
+        padding: 30px 40px;
+    }
+}

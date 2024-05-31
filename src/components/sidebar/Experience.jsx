@@ -1,16 +1,21 @@
 import FormInput from './FormInput';
 import AddBtn from './AddBtn';
+import { faBriefcase  } from '@fortawesome/free-solid-svg-icons';
+import FormHeader from './FormHeader';
 
 const Experience = () => {
     const showEducationForm = (event) => {
         event.preventDefault();
-
+        
         console.log('Experience');
     };
 
     return (
         <form id='experience'>
-            <h2>Experience</h2>
+            <FormHeader 
+                icon={faBriefcase}
+                headerText='Experience'
+            />
             <FormInput id='company-name' labelText='Company Name' placeholder='Enter company name' required />
             <FormInput id='position-title' labelText='Position title' placeholder='Enter Position Title' required />
             <FormInput id='start-date-exp' labelText='Start Experience Date' placeholder='Enter in format month/year' required />

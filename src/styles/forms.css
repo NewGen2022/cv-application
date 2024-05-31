@@ -10,7 +10,7 @@
 
 form {
     background-color: rgb(255, 255, 255);
-    padding: 30px 60px;
+    padding: 30px 4vw;
     border-radius: 10px;
     box-shadow: 0 7px 10px rgb(130, 130, 130);
     width: 21%;
@@ -105,11 +105,15 @@ form h2 {
     transform: scale(0.95);
 }
 
+#personal-details {
+    margin-top: 40px;
+}
+
 #experience {
     margin-bottom: 40px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     form {
         padding: 30px 40px;
     }

@@ -15,10 +15,12 @@ const Experience = () => {
             <FormInput id='position-title' labelText='Position title' placeholder='Enter Position Title' required />
             <FormInput id='start-date-exp' labelText='Start Experience Date' placeholder='Enter in format month/year' required />
             <FormInput id='end-date-exp' labelText='End Experience Date' placeholder='Enter in format month/year' required />
-            <FormInput id='location-exp' labelText='Location' placeholder='Enter Location where studied'/>
-            <FormInput id='description' labelText='Description' placeholder='Describe your experience in the company'/>
-            <AddBtn btnValue='Cancel' handleClick={showEducationForm}/>
-            <AddBtn btnValue='Save' handleClick={showEducationForm}/>
+            <FormInput id='location-exp' labelText='Location' placeholder='Enter Location'/>
+            <FormInput id='description' labelText='Description' placeholder='Describe experience'/>
+            <div className='buttons'>
+                <AddBtn btnValue='Cancel' className='cancel' handleClick={showEducationForm}/>
+                <AddBtn btnValue='Save' className='save' handleClick={showEducationForm}/>
+            </div>
         </form>
     );
 };

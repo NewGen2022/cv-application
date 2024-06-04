@@ -2,16 +2,24 @@ import FullName from './FullName';
 import Email from './Email';
 import Phone from './Phone';
 import Location from './Location';
+import PropTypes from 'prop-types';
 
-const ResumeHeader = () => {
+const ResumeHeader = ({ name, email, phone, address }) => {
     return (
         <div id='resume-header'>
-            <FullName fullName='Christopher Reynolds'/>
-            <Email email='chrisrey@gmail.com'/>
-            <Phone phone='+81-80-2345-6789'/>
-            <Location location='Tokyo, Japan'/>
+            <FullName name={name}/>
+            <Email email={email}/>
+            <Phone phone={phone}/>
+            <Location address={address}/>
         </div>
     );
+};
+
+ResumeHeader.propTypes = {
+    name: PropTypes.string,
+    email: PropTypes.string,
+    phone: PropTypes.string,
+    address: PropTypes.string,
 };
 
 export default ResumeHeader;

@@ -4,7 +4,7 @@ import Education from './Education';
 import Experience from './Experience';
 import PropTypes from 'prop-types';
 
-const Sidebar = ({ handleInputChange, handleInputSubmit, institutions, onDelete }) => {
+const Sidebar = ({ handleInputChange, handleEduInputSubmit, handleExpInputSubmit, institutions, experience, onEducationDelete, onExperienceDelete }) => {
     return (
         <div id='sidebar'>
             <TopBar />
@@ -12,11 +12,16 @@ const Sidebar = ({ handleInputChange, handleInputSubmit, institutions, onDelete 
                 <Personal handleInputChange={handleInputChange} />
                 <Education 
                     handleInputChange={handleInputChange}
-                    handleInputSubmit={handleInputSubmit} 
+                    handleInputSubmit={handleEduInputSubmit} 
                     institutions={institutions}
-                    onDelete={onDelete}
+                    onDelete={onEducationDelete}
                 />
-                <Experience handleInputChange={handleInputChange} handleInputSubmit={handleInputSubmit} />
+                <Experience 
+                    handleInputChange={handleInputChange} 
+                    handleInputSubmit={handleExpInputSubmit}
+                    experience={experience}
+                    onDelete={onExperienceDelete}
+                />
             </div>
         </div>
     );
@@ -24,9 +29,12 @@ const Sidebar = ({ handleInputChange, handleInputSubmit, institutions, onDelete 
 
 Sidebar.propTypes = {
     handleInputChange: PropTypes.func.isRequired,
-    handleInputSubmit: PropTypes.func.isRequired,
+    handleEduInputSubmit: PropTypes.func.isRequired,
+    handleExpInputSubmit: PropTypes.func.isRequired,
     institutions: PropTypes.array,
-    onDelete: PropTypes.func.isRequired
+    experience: PropTypes.array,
+    onEducationDelete: PropTypes.func.isRequired,
+    onExperienceDelete: PropTypes.func.isRequired,
 };
 
 export default Sidebar;

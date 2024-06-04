@@ -1,41 +1,77 @@
+import { useState } from 'react';
+import { faBriefcase  } from '@fortawesome/free-solid-svg-icons';
 import FormInput from './FormInput';
 import AddBtn from './AddBtn';
-import { faBriefcase  } from '@fortawesome/free-solid-svg-icons';
 import FormHeader from './FormHeader';
-import { useState } from 'react';
+import Card from './Card';
+import PropTypes from 'prop-types';
 
-const Experience = () => {
+const Experience = ({ handleInputChange, handleInputSubmit, experience, onDelete }) => {
     const [isVisible, setIsVisible] = useState(false);
+    const [showExperience, setShowExperience] = useState(false);
 
     const showExperienceForm = (event) => {
         event.preventDefault();
         setIsVisible(!isVisible);
     };
 
+    const showAllExperience = (event) => {
+        event.preventDefault();
+        setShowExperience(!showExperience);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        handleInputSubmit(event);
+        showAllExperience(event);
+    };
+
     return (
-        <form id='experience'>
+        <form id='experience' onSubmit={handleSubmit}>
             <FormHeader 
                 icon={faBriefcase}
                 headerText='Experience'
                 isVisible={isVisible}
                 toggleHandler={showExperienceForm}
             />
-            { isVisible && (
+            {isVisible && !showExperience ? (
                 <>
-                    <FormInput id='company-name' labelText='Company Name' placeholder='Enter company name' required />
-                    <FormInput id='position-title' labelText='Position title' placeholder='Enter Position Title' required />
-                    <FormInput id='start-date-exp' labelText='Start Experience Date' placeholder='Enter in format month/year' required />
-                    <FormInput id='end-date-exp' labelText='End Experience Date' placeholder='Enter in format month/year' required />
-                    <FormInput id='location-exp' labelText='Location' placeholder='Enter Location'/>
-                    <FormInput id='description' labelText='Description' placeholder='Describe experience'/>
+                    <FormInput id='company-name' labelText='Company Name' placeholder='Enter company name' onInputChange={handleInputChange} required />
+                    <FormInput id='position-title' labelText='Position title' placeholder='Enter Position Title' onInputChange={handleInputChange} required />
+                    <FormInput id='start-date-exp' labelText='Start Experience Date' placeholder='Enter in format month/year' onInputChange={handleInputChange} required />
+                    <FormInput id='end-date-exp' labelText='End Experience Date' placeholder='Enter in format month/year' onInputChange={handleInputChange} required />
+                    <FormInput id='location-exp' labelText='Location' placeholder='Enter Location' onInputChange={handleInputChange} />
+                    <FormInput id='description' labelText='Description' placeholder='Describe experience' onInputChange={handleInputChange} />
                     <div className='buttons'>
-                        <AddBtn btnValue='Cancel' className='cancel'/>
+                        <AddBtn btnValue='Cancel' className='cancel' handleClick={showExperienceForm}/>
+                        <AddBtn btnValue='Show All' className='show-all' handleClick={showAllExperience} />
                         <AddBtn btnValue='Save' className='save'/>
                     </div>
                 </>
-            )}
+            ) : (isVisible && showExperience && (
+                <>
+                    <div className='education-institutions-wrapper'>
+                        {experience.map((exp, index) => (
+                            <Card 
+                                key={index}
+                                institution={exp} 
+                                onDelete={onDelete}
+                            />
+                        ))}
+                    </div>
+
+                    <button onClick={showAllExperience}>button</button>
+                </>
+            ))}
         </form>
     );
+};
+
+Experience.propTypes = {
+    handleInputChange: PropTypes.func.isRequired,
+    handleInputSubmit: PropTypes.func.isRequired,
+    experience: PropTypes.array,
+    onDelete: PropTypes.func.isRequired,
 };
 
 export default Experience;

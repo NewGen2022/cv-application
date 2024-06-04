@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 
-const FullName = ({ fullName }) => {
+const FullName = ({ name }) => {
     return (
         <div id='full-name'>
-            <span>{fullName}</span>
+            <span>{name}</span>
         </div>
     );
 };
 
 FullName.propTypes = {
-    fullName: PropTypes.string,
+    name: PropTypes.string,
 };
 
 export default FullName;

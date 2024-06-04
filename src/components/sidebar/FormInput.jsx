@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const FormInput = ({ id, labelText, type, placeholder, required=false, onInputChange }) => {
+const FormInput = ({ id, labelText, type='text', placeholder, required=false, onInputChange }) => {
     return (
         <div className="form-input">
             <label htmlFor={id}>{labelText}</label>
@@ -14,10 +14,6 @@ const FormInput = ({ id, labelText, type, placeholder, required=false, onInputCh
             />
         </div>
     );
-};
-
-FormInput.defaultProps = {
-    type: 'text'
 };
 
 FormInput.propTypes = {

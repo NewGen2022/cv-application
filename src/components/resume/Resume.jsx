@@ -2,7 +2,6 @@ import ResumeHeader from './ResumeHeader';
 import OutputFields from './OutputFields';
 
 const Resume = (formsData) => {
-    console.log('12345678', formsData);
     return (
         <div id='resume'>
             <ResumeHeader 
@@ -24,8 +23,16 @@ const Resume = (formsData) => {
                     ))}
                 </div>
 
-
-                <OutputFields className='experience-header' data='Professional Experience'/>
+                <div className='experience-wrapper'>
+                    <OutputFields className='experience-header' data='Professional Experience'/>
+                    {formsData.experience.map((experience, index) => (
+                        <div key={index} className='company-wrapper'>
+                            {Object.entries(experience).map(([key, value]) => (
+                                <OutputFields key={key} className={key} data={value}/>
+                            ))}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const AddBtn = ({ btnValue, className, handleClick }) => {
     return (
-        <button className={className} onClick={handleClick}>{btnValue}</button>
+        <button className={className} type='submit' onClick={handleClick}>{btnValue}</button>
     );
 };
 

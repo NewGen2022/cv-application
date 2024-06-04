@@ -3,14 +3,9 @@ import Resume from './components/resume/Resume';
 import { useState } from 'react';
 
 const App = () => {
-    const [formData, setFormData] = useState({
-        // name: '', // Christopher Reynolds
-        // email: '', // chrisrey@gmail.com
-        // phone: '', // +81-80-2345-6789
-        // address: '' // Tokyo, Japan
-    });
-
+    const [formData, setFormData] = useState({});
     const [educationInstitutions, setEducationInstitution] = useState([]);
+    const [experience, setExperience] = useState([]);
 
     const handleInputChange = (event) => {
         const { id, value } = event.target;
@@ -20,7 +15,7 @@ const App = () => {
         }));
     };
 
-    const handleInputSubmit = (event) => {
+    const handleEducationInputSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
         
@@ -37,9 +32,34 @@ const App = () => {
         ]);
     };
 
-    const onDelete = (institutionToDelete) => {
+    const handleExperienceInputSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        
+        const experienceData = {};
+
+        for (const entry of formData.entries()) {
+            const [name, value] = entry;
+            experienceData[name] = value;
+        }
+
+        setExperience((prevState) => [
+            ...prevState,
+            { ...experienceData }
+        ]);
+
+        console.log(experienceData);
+    };
+
+    const onEducationDelete = (institutionToDelete) => {
         setEducationInstitution((prevState) => 
             prevState.filter(institution => institution !== institutionToDelete
+            ));
+    };
+
+    const onExperienceDelete = (experienceToDelete) => {
+        setExperience((prevState) => 
+            prevState.filter(experience => experience !== experienceToDelete
             ));
     };
 
@@ -47,11 +67,14 @@ const App = () => {
         <>
             <Sidebar 
                 handleInputChange={handleInputChange} 
-                handleInputSubmit={handleInputSubmit} 
+                handleEduInputSubmit={handleEducationInputSubmit}
+                handleExpInputSubmit={handleExperienceInputSubmit}
                 institutions={educationInstitutions}
-                onDelete={onDelete}
+                experience={experience}
+                onEducationDelete={onEducationDelete}
+                onExperienceDelete={onExperienceDelete}
             />
-            <Resume {...formData} institutions={educationInstitutions} />
+            <Resume {...formData} institutions={educationInstitutions} experience={experience} />
         </>
     );
 };

@@ -22,10 +22,33 @@ const Personal = ({ handleInputChange }) => {
             />
             {isVisible && (
                 <>
-                    <FormInput id='name' labelText='Full Name' placeholder='Enter First and Last Name' onInputChange={handleInputChange} required />
-                    <FormInput id='email' labelText='Email' type='email' placeholder='Enter email' onInputChange={handleInputChange} />
-                    <FormInput id='phone' labelText='Phone number' type='tel' placeholder='Enter phone number' onInputChange={handleInputChange} />
-                    <FormInput id='address' labelText='Address' placeholder='City, Country' onInputChange={handleInputChange} />
+                    <FormInput 
+                        id='name' 
+                        labelText='Full Name' 
+                        placeholder='Enter First and Last Name' 
+                        onInputChange={handleInputChange} 
+                        required 
+                    />
+                    <FormInput 
+                        id='email'
+                        labelText='Email' 
+                        type='email' 
+                        placeholder='Enter email' 
+                        onInputChange={handleInputChange} 
+                    />
+                    <FormInput 
+                        id='phone' 
+                        labelText='Phone number' 
+                        type='tel' 
+                        placeholder='Enter phone number' 
+                        onInputChange={handleInputChange} 
+                    />
+                    <FormInput 
+                        id='address' 
+                        labelText='Address' 
+                        placeholder='City, Country' 
+                        onInputChange={handleInputChange} 
+                    />
                 </>
             )}
         </form>

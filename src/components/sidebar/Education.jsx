@@ -1,29 +1,26 @@
-import { faGraduationCap  } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { faGraduationCap  } from '@fortawesome/free-solid-svg-icons';
 import FormInput from './FormInput';
 import AddBtn from './AddBtn';
 import FormHeader from './FormHeader';
 import Card from './Card';
 import PropTypes from 'prop-types';
+import { showForm, showAll, showSubmit } from './ShowHandler';
 
 const Education = ({ handleInputChange, handleInputSubmit, institutions, onDelete }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [showInstitutions, setShowInstitutions] = useState(false);
 
     const showEducationForm = (event) => {
-        event.preventDefault();
-        setIsVisible(!isVisible);
+        showForm(event, setIsVisible, isVisible);
     };
 
     const showAllInstitutions = (event) => {
-        event.preventDefault();
-        setShowInstitutions(!showInstitutions);
+        showAll(event, setShowInstitutions, showInstitutions);
     };
 
     const handleSubmit = (event) => {
-        event.preventDefault();
-        handleInputSubmit(event);
-        showAllInstitutions(event);
+        showSubmit(event, handleInputSubmit, setShowInstitutions, showInstitutions);
     };
 
     return (

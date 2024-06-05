@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import Sidebar from './components/sidebar/Sidebar';
 import Resume from './components/resume/Resume';
-import { useState } from 'react';
+import handleInputSubmit from './SubmitHandler';
+import handleDelete from './DeleteHandler';
 
 const App = () => {
     const [formData, setFormData] = useState({});
@@ -16,51 +18,19 @@ const App = () => {
     };
 
     const handleEducationInputSubmit = (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        
-        const educationData = {};
-
-        for (const entry of formData.entries()) {
-            const [name, value] = entry;
-            educationData[name] = value;
-        }
-
-        setEducationInstitution((prevState) => [
-            ...prevState,
-            { ...educationData }
-        ]);
+        handleInputSubmit(event, setEducationInstitution);
     };
 
     const handleExperienceInputSubmit = (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        
-        const experienceData = {};
-
-        for (const entry of formData.entries()) {
-            const [name, value] = entry;
-            experienceData[name] = value;
-        }
-
-        setExperience((prevState) => [
-            ...prevState,
-            { ...experienceData }
-        ]);
-
-        console.log(experienceData);
+        handleInputSubmit(event, setExperience);
     };
 
     const onEducationDelete = (institutionToDelete) => {
-        setEducationInstitution((prevState) => 
-            prevState.filter(institution => institution !== institutionToDelete
-            ));
+        handleDelete(institutionToDelete, setEducationInstitution);
     };
 
     const onExperienceDelete = (experienceToDelete) => {
-        setExperience((prevState) => 
-            prevState.filter(experience => experience !== experienceToDelete
-            ));
+        handleDelete(experienceToDelete, setExperience);
     };
 
     return (

@@ -5,25 +5,22 @@ import AddBtn from './AddBtn';
 import FormHeader from './FormHeader';
 import Card from './Card';
 import PropTypes from 'prop-types';
+import { showForm, showAll, showSubmit } from './ShowHandler';
 
 const Experience = ({ handleInputChange, handleInputSubmit, experience, onDelete }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [showExperience, setShowExperience] = useState(false);
 
     const showExperienceForm = (event) => {
-        event.preventDefault();
-        setIsVisible(!isVisible);
+        showForm(event, setIsVisible, isVisible);
     };
 
     const showAllExperience = (event) => {
-        event.preventDefault();
-        setShowExperience(!showExperience);
+        showAll(event, setShowExperience, showExperience);
     };
 
     const handleSubmit = (event) => {
-        event.preventDefault();
-        handleInputSubmit(event);
-        showAllExperience(event);
+        showSubmit(event, handleInputSubmit, setShowExperience, showExperience);
     };
 
     return (

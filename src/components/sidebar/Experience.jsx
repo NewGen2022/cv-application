@@ -6,6 +6,7 @@ import FormHeader from './FormHeader';
 import Card from './Card';
 import PropTypes from 'prop-types';
 import { showForm, showAll, showSubmit } from './ShowHandler';
+import ShowFormBtn from './AddAnotherBtn';
 
 const Experience = ({ handleInputChange, handleInputSubmit, experience, onDelete }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -57,7 +58,7 @@ const Experience = ({ handleInputChange, handleInputSubmit, experience, onDelete
                         ))}
                     </div>
 
-                    <button onClick={showAllExperience}>button</button>
+                    <ShowFormBtn btnValue='Experience' showAll={showAllExperience} />
                 </>
             ))}
         </form>

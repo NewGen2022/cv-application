@@ -6,6 +6,7 @@ import FormHeader from './FormHeader';
 import Card from './Card';
 import PropTypes from 'prop-types';
 import { showForm, showAll, showSubmit } from './ShowHandler';
+import ShowFormBtn from './AddAnotherBtn';
 
 const Education = ({ handleInputChange, handleInputSubmit, institutions, onDelete }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +57,7 @@ const Education = ({ handleInputChange, handleInputSubmit, institutions, onDelet
                         ))}
                     </div>
 
-                    <button onClick={showAllInstitutions}>button</button>
+                    <ShowFormBtn btnValue='Education' showAll={showAllInstitutions} />
                 </>
             ))}
         </form>

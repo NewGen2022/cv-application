@@ -21,7 +21,7 @@ const Card = ({ institution, onDelete }) => {
 };
 
 Card.propTypes = {
-    institution: PropTypes.array,
+    institution: PropTypes.object,
     onDelete: PropTypes.func.isRequired
 };
 

@@ -13,8 +13,8 @@ const Card = ({ institution, onDelete }) => {
     return (
         <div className="card-wrapper">
             <span>{institution[firstKey]}</span>
-            <button onClick={handleDelete} className="delete-button">
-                <FontAwesomeIcon icon={faTrash} />
+            <button onClick={handleDelete} className='delete-button'>
+                <FontAwesomeIcon icon={faTrash} className='icon-delete' />
             </button>
         </div>
     );

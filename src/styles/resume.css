@@ -5,7 +5,107 @@
     width: 100%;
     max-width: 400mm;
     min-width: 440px;
-    height: 297mm;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#resume span {
+    color: white;
+}
+
+#resume-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e374e;
+    padding: 40px 0;
+}
+
+#full-name {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#email {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 10px 0;
+}
+
+.horizontal-info {
+    display: flex;
+    gap: 20px;
+}
+
+#phone, #location {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.education-header, .experience-header {
+    background-color: #0e374e1d;
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+    padding: 10px 20px;
+    margin: 30px 50px;
+    color: rgb(34, 34, 72);
+}
+
+.school-uni-wrapper, .company-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.degree, .schoolUni,.location {
+    font-size: 18px;
+}
+
+.degree {
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.schoolUni {
+    font-weight: 700;
+}
+
+.location, .locationExp {
+    text-decoration: underline;
+}
+
+.startDate, .endDate, .startDateExp, .endDateExp {
+    font-style: italic;
+}
+
+.endDate, .endDateExp {
+    margin-bottom: 20px;
+}
+
+.icon-resume path {
+    fill: white;
+}
+
+.positionTitle {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.companyName {
+    font-weight: 500;
+}
+
+.description {
+    font-style: italic;
 }
 
 @media screen and (max-width: 900px) {

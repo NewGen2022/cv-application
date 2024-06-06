@@ -9,8 +9,10 @@ const ResumeHeader = ({ name, email, phone, address }) => {
         <div id='resume-header'>
             <FullName name={name}/>
             <Email email={email}/>
-            <Phone phone={phone}/>
-            <Location address={address}/>
+            <div className='horizontal-info'>
+                <Phone phone={phone}/>
+                <Location address={address}/>
+            </div>
         </div>
     );
 };

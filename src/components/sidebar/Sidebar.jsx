@@ -1,13 +1,19 @@
-import TopBar from './TopBar';
 import Personal from './Personal';
 import Education from './Education';
 import Experience from './Experience';
 import PropTypes from 'prop-types';
 
-const Sidebar = ({ handleInputChange, handleEduInputSubmit, handleExpInputSubmit, institutions, experience, onEducationDelete, onExperienceDelete }) => {
+const Sidebar = ({ 
+    handleInputChange, 
+    handleEduInputSubmit, 
+    handleExpInputSubmit, 
+    institutions, 
+    experience, 
+    onEducationDelete, 
+    onExperienceDelete 
+}) => {
     return (
         <div id='sidebar'>
-            <TopBar />
             <div id='forms'>
                 <Personal handleInputChange={handleInputChange} />
                 <Education 

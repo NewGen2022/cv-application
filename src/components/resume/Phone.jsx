@@ -1,8 +1,11 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 const Phone = ({ phone }) => {
     return (
-        <div>
+        <div id='phone'>
+            <FontAwesomeIcon icon={faPhone} className='icon-resume' />
             <span>{phone}</span>
         </div>
     );

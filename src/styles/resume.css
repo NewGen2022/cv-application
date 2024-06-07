@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     background-color: #0e374e;
-    padding: 40px 0;
+    padding: 40px 10px;
 }
 
 #full-name {
@@ -38,6 +38,8 @@
 .horizontal-info {
     display: flex;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 #phone, #location {
@@ -112,5 +114,10 @@
     #resume {
         width: 90%;
         min-width: 340px;
+    }
+
+    .horizontal-info {
+        flex-direction: column;
+        gap: 10px;
     }
 }

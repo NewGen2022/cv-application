@@ -1,8 +1,22 @@
-# React + Vite
+<h1 align="center">CV builder application</h1>
+<p align="center"> <strong><i>This app build as a part of Odin Project Project Curriculum to practice React.</strong></i> </p>
+<h2 align="center"><a href="https://newgen2022.github.io/cv-application/">App online</a></h2>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="https://github.com/NewGen2022/cv-application/blob/main/src/assets/cv-tab-icon.png" alt="CV Icon">
+</p>
 
-Currently, two official plugins are available:
+# Technologies used
+- React
+- Github pages (to deploy project)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Functionality of the app
+- Load Example Curriculum Vitae
+- Clear all CV information
+- set Personal info (like full name, email, phone number, address)
+- specify Education and Experience
+
+# App preview
+![](https://github.com/NewGen2022/cv-application/blob/main/app-preview.jpg)
+
+**This site was built using [GitHub Pages](https://pages.github.com/).**
